@@ -1,9 +1,11 @@
-
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { Leaf, Sun, Cloud, Recycle } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="relative overflow-hidden bg-gradient-to-b from-eco-green-light/10 to-transparent pb-16">
       <div className="container mx-auto px-4 pt-16 pb-24 sm:pt-24 sm:pb-32">
@@ -21,10 +23,18 @@ const Hero = () => {
               for a greener, more resilient neighborhood.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-eco-green hover:bg-eco-green-dark">
+              <Button 
+                size="lg" 
+                className="bg-eco-green hover:bg-eco-green-dark"
+                onClick={() => navigate('/auth')}
+              >
                 Join the Community
               </Button>
-              <Button size="lg" variant="outline">
+              <Button 
+                size="lg" 
+                variant="outline"
+                onClick={() => navigate('/map')}
+              >
                 Explore the Map
               </Button>
             </div>
